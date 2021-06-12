@@ -1,29 +1,44 @@
 %----------------------------------------------------------------------------------------
-%	EXAMPLE AND DOCUMENTATION OF THE KAOBOOK CLASS
+%   EXAMPLE AND DOCUMENTATION OF THE KAOBOOK CLASS
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-showframe,
+% showframe,
     a4paper, % Page size
     fontsize=10pt, % Base font size
     twoside=true, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
-	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
-	%chapterentrydots=true, % Uncomment to output dots from the chapter name to the page number in the table of contents
-	numbers=noenddot, % Comment to output dots after chapter numbers; the most common values for this option are: enddot, noenddot and auto (see the KOMAScript documentation for an in-depth explanation)
+    %open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
+    %chapterentrydots=true, % Uncomment to output dots from the chapter name to the page number in the table of contents
+    numbers=noenddot, % Comment to output dots after chapter numbers; the most common values for this option are: enddot, noenddot and auto (see the KOMAScript documentation for an in-depth explanation)
 ]{kaobook}
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
+\newif\ifspanish
+\spanishtrue
+\spanishfalse
 % Choose the language
 \ifxetexorluatex
-	\usepackage{polyglossia}
-	\setmainlanguage{english}
+    \usepackage{polyglossia}
+    \ifspanish
+        \setmainlanguage{spanish}
+    \else
+        \setmainlanguage{english}
+    \fi
 \else
-	\usepackage[english]{babel} % Load characters and hyphenation
+    \ifspanish
+        \usepackage[spanish]{babel} % Load characters and hyphenation
+    \else
+        \usepackage[english]{babel} % Load characters and hyphenation
+    \fi
 \fi
-\usepackage[english=british]{csquotes}	% English quotes
+\ifspanish
+    \usepackage[autostyle=true]{csquotes}  % To use babel or polyglossia language
+\else
+    \usepackage[english=british]{csquotes}    % English quotes
+\fi
 
 % Load packages for testing
 \usepackage{blindtext}
@@ -57,7 +72,7 @@ showframe,
 \begin{document}
 
 %----------------------------------------------------------------------------------------
-%	BOOK INFORMATION
+%   BOOK INFORMATION
 %----------------------------------------------------------------------------------------
 
 \titlehead{The \texttt{kaobook} class}
@@ -77,66 +92,66 @@ showframe,
 \frontmatter % Denotes the start of the pre-document content, uses roman numerals
 
 %----------------------------------------------------------------------------------------
-%	OPENING PAGE
+%   OPENING PAGE
 %----------------------------------------------------------------------------------------
 
 %\makeatletter
 %\extratitle{
-%	% In the title page, the title is vspaced by 9.5\baselineskip
-%	\vspace*{9\baselineskip}
-%	\vspace*{\parskip}
-%	\begin{center}
-%		% In the title page, \huge is set after the komafont for title
-%		\usekomafont{title}\huge\@title
-%	\end{center}
+%   % In the title page, the title is vspaced by 9.5\baselineskip
+%   \vspace*{9\baselineskip}
+%   \vspace*{\parskip}
+%   \begin{center}
+%       % In the title page, \huge is set after the komafont for title
+%       \usekomafont{title}\huge\@title
+%   \end{center}
 %}
 %\makeatother
 
 %----------------------------------------------------------------------------------------
-%	COPYRIGHT PAGE
+%   COPYRIGHT PAGE
 %----------------------------------------------------------------------------------------
 
 \makeatletter
 \uppertitleback{\@titlehead} % Header
 
 \lowertitleback{
-	\textbf{Disclaimer}\\
-	You can edit this page to suit your needs. For instance, here we have a no copyright statement, a colophon and some other information. This page is based on the corresponding page of Ken Arroyo Ohori's thesis, with minimal changes.
-	
-	\medskip
-	
-	\textbf{No copyright}\\
-	\cczero\ This book is released into the public domain using the CC0 code. To the extent possible under law, I waive all copyright and related or neighbouring rights to this work.
-	
-	To view a copy of the CC0 code, visit: \\\url{http://creativecommons.org/publicdomain/zero/1.0/}
-	
-	\medskip
-	
-	\textbf{Colophon} \\
-	This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the \href{https://github.com/fmarotta/kaobook/}{kaobook} class.
-	
-	The source code of this book is available at:\\\url{https://github.com/fmarotta/kaobook}
-	
-	(You are welcome to contribute!)
-	
-	\medskip
-	
-	\textbf{Publisher} \\
-	First printed in May 2019 by \@publishers
+    \textbf{Disclaimer}\\
+    You can edit this page to suit your needs. For instance, here we have a no copyright statement, a colophon and some other information. This page is based on the corresponding page of Ken Arroyo Ohori's thesis, with minimal changes.
+    
+    \medskip
+    
+    \textbf{No copyright}\\
+    \cczero\ This book is released into the public domain using the CC0 code. To the extent possible under law, I waive all copyright and related or neighbouring rights to this work.
+    
+    To view a copy of the CC0 code, visit: \\\url{http://creativecommons.org/publicdomain/zero/1.0/}
+    
+    \medskip
+    
+    \textbf{Colophon} \\
+    This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the \href{https://github.com/fmarotta/kaobook/}{kaobook} class.
+    
+    The source code of this book is available at:\\\url{https://github.com/fmarotta/kaobook}
+    
+    (You are welcome to contribute!)
+    
+    \medskip
+    
+    \textbf{Publisher} \\
+    First printed in May 2019 by \@publishers
 }
 \makeatother
 
 %----------------------------------------------------------------------------------------
-%	DEDICATION
+%   DEDICATION
 %----------------------------------------------------------------------------------------
 
 \dedication{
-	The harmony of the world is made manifest in Form and Number, and the heart and soul and all the poetry of Natural Philosophy are embodied in the concept of mathematical beauty.\\
-	\flushright -- D'Arcy Wentworth Thompson
+    The harmony of the world is made manifest in Form and Number, and the heart and soul and all the poetry of Natural Philosophy are embodied in the concept of mathematical beauty.\\
+    \flushright -- D'Arcy Wentworth Thompson
 }
 
 %----------------------------------------------------------------------------------------
-%	OUTPUT TITLE PAGE AND PREVIOUS
+%   OUTPUT TITLE PAGE AND PREVIOUS
 %----------------------------------------------------------------------------------------
 
 % Note that \maketitle outputs the pages before here
@@ -144,14 +159,14 @@ showframe,
 \maketitle
 
 %----------------------------------------------------------------------------------------
-%	PREFACE
+%   PREFACE
 %----------------------------------------------------------------------------------------
 
 \input{chapters/preface.tex}
 \index{preface}
 
 %----------------------------------------------------------------------------------------
-%	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
+%   TABLE OF CONTENTS & LIST OF FIGURES/TABLES
 %----------------------------------------------------------------------------------------
 
 \begingroup % Local scope for the following commands
@@ -178,7 +193,7 @@ showframe,
 \endgroup
 
 %----------------------------------------------------------------------------------------
-%	MAIN BODY
+%   MAIN BODY
 %----------------------------------------------------------------------------------------
 
 \mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
@@ -216,7 +231,7 @@ showframe,
 \setchapterstyle{plain} % Output plain chapters from this point onwards
 
 %----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
+%   BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
 % The bibliography needs to be compiled with biber using your LaTeX editor, or on the command line with 'biber main' from the template directory
@@ -225,7 +240,7 @@ showframe,
 \printbibliography[heading=bibintoc, title=Bibliography, prenote=bibnote] % Add the bibliography heading to the ToC, set the title of the bibliography and output the bibliography note
 
 %----------------------------------------------------------------------------------------
-%	NOMENCLATURE
+%   NOMENCLATURE
 %----------------------------------------------------------------------------------------
 
 % The nomenclature needs to be compiled on the command line with 'makeindex main.nlo -s nomencl.ist -o main.nls' from the template directory
@@ -239,38 +254,38 @@ showframe,
 \printnomenclature % Output the nomenclature
 
 %----------------------------------------------------------------------------------------
-%	GREEK ALPHABET
-% 	Originally from https://gitlab.com/jim.hefferon/linear-algebra
+%   GREEK ALPHABET
+%     Originally from https://gitlab.com/jim.hefferon/linear-algebra
 %----------------------------------------------------------------------------------------
 
 \vspace{1cm}
 
 {\usekomafont{chapter}Greek Letters with Pronunciations} \\[2ex]
 \begin{center}
-	\newcommand{\pronounced}[1]{\hspace*{.2em}\small\textit{#1}}
-	\begin{tabular}{l l @{\hspace*{3em}} l l}
-		\toprule
-		Character & Name & Character & Name \\ 
-		\midrule
-		$\alpha$ & alpha \pronounced{AL-fuh} & $\nu$ & nu \pronounced{NEW} \\
-		$\beta$ & beta \pronounced{BAY-tuh} & $\xi$, $\Xi$ & xi \pronounced{KSIGH} \\ 
-		$\gamma$, $\Gamma$ & gamma \pronounced{GAM-muh} & o & omicron \pronounced{OM-uh-CRON} \\
-		$\delta$, $\Delta$ & delta \pronounced{DEL-tuh} & $\pi$, $\Pi$ & pi \pronounced{PIE} \\
-		$\epsilon$ & epsilon \pronounced{EP-suh-lon} & $\rho$ & rho \pronounced{ROW} \\
-		$\zeta$ & zeta \pronounced{ZAY-tuh} & $\sigma$, $\Sigma$ & sigma \pronounced{SIG-muh} \\
-		$\eta$ & eta \pronounced{AY-tuh} & $\tau$ & tau \pronounced{TOW (as in cow)} \\
-		$\theta$, $\Theta$ & theta \pronounced{THAY-tuh} & $\upsilon$, $\Upsilon$ & upsilon \pronounced{OOP-suh-LON} \\
-		$\iota$ & iota \pronounced{eye-OH-tuh} & $\phi$, $\Phi$ & phi \pronounced{FEE, or FI (as in hi)} \\
-		$\kappa$ & kappa \pronounced{KAP-uh} & $\chi$ & chi \pronounced{KI (as in hi)} \\
-		$\lambda$, $\Lambda$ & lambda \pronounced{LAM-duh} & $\psi$, $\Psi$ & psi \pronounced{SIGH, or PSIGH} \\
-		$\mu$ & mu \pronounced{MEW} & $\omega$, $\Omega$ & omega \pronounced{oh-MAY-guh} \\
-		\bottomrule
-	\end{tabular} \\[1.5ex]
-	Capitals shown are the ones that differ from Roman capitals.
+    \newcommand{\pronounced}[1]{\hspace*{.2em}\small\textit{#1}}
+    \begin{tabular}{l l @{\hspace*{3em}} l l}
+        \toprule
+        Character & Name & Character & Name \\ 
+        \midrule
+        $\alpha$ & alpha \pronounced{AL-fuh} & $\nu$ & nu \pronounced{NEW} \\
+        $\beta$ & beta \pronounced{BAY-tuh} & $\xi$, $\Xi$ & xi \pronounced{KSIGH} \\ 
+        $\gamma$, $\Gamma$ & gamma \pronounced{GAM-muh} & o & omicron \pronounced{OM-uh-CRON} \\
+        $\delta$, $\Delta$ & delta \pronounced{DEL-tuh} & $\pi$, $\Pi$ & pi \pronounced{PIE} \\
+        $\epsilon$ & epsilon \pronounced{EP-suh-lon} & $\rho$ & rho \pronounced{ROW} \\
+        $\zeta$ & zeta \pronounced{ZAY-tuh} & $\sigma$, $\Sigma$ & sigma \pronounced{SIG-muh} \\
+        $\eta$ & eta \pronounced{AY-tuh} & $\tau$ & tau \pronounced{TOW (as in cow)} \\
+        $\theta$, $\Theta$ & theta \pronounced{THAY-tuh} & $\upsilon$, $\Upsilon$ & upsilon \pronounced{OOP-suh-LON} \\
+        $\iota$ & iota \pronounced{eye-OH-tuh} & $\phi$, $\Phi$ & phi \pronounced{FEE, or FI (as in hi)} \\
+        $\kappa$ & kappa \pronounced{KAP-uh} & $\chi$ & chi \pronounced{KI (as in hi)} \\
+        $\lambda$, $\Lambda$ & lambda \pronounced{LAM-duh} & $\psi$, $\Psi$ & psi \pronounced{SIGH, or PSIGH} \\
+        $\mu$ & mu \pronounced{MEW} & $\omega$, $\Omega$ & omega \pronounced{oh-MAY-guh} \\
+        \bottomrule
+    \end{tabular} \\[1.5ex]
+    Capitals shown are the ones that differ from Roman capitals.
 \end{center}
 
 %----------------------------------------------------------------------------------------
-%	GLOSSARY
+%   GLOSSARY
 %----------------------------------------------------------------------------------------
 
 % The glossary needs to be compiled on the command line with 'makeglossaries main' from the template directory
@@ -279,7 +294,7 @@ showframe,
 \printglossary[title=Special Terms, toctitle=List of Terms] % Output the glossary, 'title' is the chapter heading for the glossary, toctitle is the table of contents heading
 
 %----------------------------------------------------------------------------------------
-%	INDEX
+%   INDEX
 %----------------------------------------------------------------------------------------
 
 % The index needs to be compiled on the command line with 'makeindex main' from the template directory
@@ -287,7 +302,7 @@ showframe,
 \printindex % Output the index
 
 %----------------------------------------------------------------------------------------
-%	BACK COVER
+%   BACK COVER
 %----------------------------------------------------------------------------------------
 
 % If you have a PDF/image file that you want to use as a back cover, uncomment the following lines
