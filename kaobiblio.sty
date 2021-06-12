@@ -55,14 +55,14 @@
 
 % Remove some unwanted entries from the bibliography
 \AtEveryBibitem{
-	\clearfield{issn}
-	\clearfield{isbn}
-	\clearfield{archivePrefix}
-	\clearfield{arxivId}
-	\clearfield{pmid}
-	\clearfield{eprint}
-	\ifentrytype{online}{}{\ifentrytype{misc}{}{\clearfield{url}}}
-	\ifentrytype{book}{\clearfield{doi}}{}
+    \clearfield{issn}
+    \clearfield{isbn}
+    \clearfield{archivePrefix}
+    \clearfield{arxivId}
+    \clearfield{pmid}
+    \clearfield{eprint}
+    \ifentrytype{online}{}{\ifentrytype{misc}{}{\clearfield{url}}}
+    \ifentrytype{book}{\clearfield{doi}}{}
 }
 
 % Convert months to integers
@@ -86,7 +86,7 @@
 }
 
 %----------------------------------------------------------------------------------------
-%	BACK REFERENCES
+%   BACK REFERENCES
 %----------------------------------------------------------------------------------------
 
 % Check if a string is in a comma-separated list
@@ -95,54 +95,54 @@
 % Set the language-specific back reference strings
 % #LANGUAGE
 \@ifpackageloaded{polyglossia}{%
-	\IfLanguageName{danish}{%
-		\DefineBibliographyStrings{danish}{%
-			backrefpage = {citeret på side},
-			backrefpages = {citeret på sider},
-		}
-	}{}
-	\IfLanguageName{english}{%
-		\DefineBibliographyStrings{english}{%
-			backrefpage = {cited on page},
-			backrefpages = {cited on pages},
-		}
-	}{}
-	\IfLanguageName{italian}{%
-		\DefineBibliographyStrings{italian}{%
-			backrefpage = {citato a pag.},
-			backrefpages = {citato a pagg.},
-		}
-	}{}
+    \IfLanguageName{danish}{%
+        \DefineBibliographyStrings{danish}{%
+            backrefpage = {citeret på side},
+            backrefpages = {citeret på sider},
+        }
+    }{}
+    \IfLanguageName{english}{%
+        \DefineBibliographyStrings{english}{%
+            backrefpage = {cited on page},
+            backrefpages = {cited on pages},
+        }
+    }{}
+    \IfLanguageName{italian}{%
+        \DefineBibliographyStrings{italian}{%
+            backrefpage = {citato a pag.},
+            backrefpages = {citato a pagg.},
+        }
+    }{}
 }{
-	\@ifpackageloaded{babel}{%
-		\IfStringInList{danish}{\bbl@loaded}{%
-			\DefineBibliographyStrings{danish}{%
-				backrefpage = {citeret på side},
-				backrefpages = {citeret på sider},
-			}
-		}{}
-		\IfStringInList{english}{\bbl@loaded}{%
-			\DefineBibliographyStrings{english}{%
-				backrefpage = {cited on page},
-				backrefpages = {cited on pages},
-			}
-		}{}
-		\IfStringInList{italian}{\bbl@loaded}{%
-			\DefineBibliographyStrings{italian}{%
-				backrefpage = {citato a pag.},
-				backrefpages = {citato a pagg.},
-			}
-		}{}
-	}{}
+    \@ifpackageloaded{babel}{%
+        \IfStringInList{danish}{\bbl@loaded}{%
+            \DefineBibliographyStrings{danish}{%
+                backrefpage = {citeret på side},
+                backrefpages = {citeret på sider},
+            }
+        }{}
+        \IfStringInList{english}{\bbl@loaded}{%
+            \DefineBibliographyStrings{english}{%
+                backrefpage = {cited on page},
+                backrefpages = {cited on pages},
+            }
+        }{}
+        \IfStringInList{italian}{\bbl@loaded}{%
+            \DefineBibliographyStrings{italian}{%
+                backrefpage = {citato a pag.},
+                backrefpages = {citato a pagg.},
+            }
+        }{}
+    }{}
 }
 
 %----------------------------------------------------------------------------------------
-%	CITATION COMMANDS
+%   CITATION COMMANDS
 %----------------------------------------------------------------------------------------
 
 % Command to format the marginnote created for cited items
 \NewDocumentCommand{\formatmargincitation}{m}{% The parameter is a single citation key
-	\parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}%
+    \parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}%
 }
 
 % Command to format the marginnote created for supercited items
@@ -171,13 +171,13 @@
     \RenewDocumentCommand{\kaobiblio@marginnote}{m}{%
         \marginnote[#1]{##1}%
     }%
-	\DeclareCiteCommand{\kaobiblio@sidecite}[\kaobiblio@marginnote]{%
-	}{%
-		\formatmargincitation{\thefield{entrykey}}%
-	}{%
-		\\% separator between multiple citations
-	}{%
-	}%
+    \DeclareCiteCommand{\kaobiblio@sidecite}[\kaobiblio@marginnote]{%
+    }{%
+        \formatmargincitation{\thefield{entrykey}}%
+    }{%
+        \\% separator between multiple citations
+    }{%
+    }%
     % With this we print the marker in the text and add the item to the bibliography at the end
     \IfNoValueOrEmptyTF{#2}%
     {\def\@tempa{\cite{#4}\kaobiblio@sidecite{#4}}}%
@@ -205,12 +205,12 @@
         \marginnote[#1]{##1}%
     }%
     \DeclareCiteCommand{\kaobiblio@sidesupercite}[\kaobiblio@marginnote]{%
-	}{%
+    }{%
         \formatmarginsupercitation{\thefield{entrykey}}%
-	}{%
-		\\% separator between multiple citations
-	}{%
-	}%
+    }{%
+        \\% separator between multiple citations
+    }{%
+    }%
     % With this we print the marker in the text and add the item to the bibliography at the end
     \IfNoValueOrEmptyTF{#2}%
     {\def\@tempa{\supercite{#4}\kaobiblio@sidesupercite{#4}}}%
@@ -230,24 +230,24 @@
 % Third optional argument: postnote
 % Mandatory argument: citation key
 \NewDocumentCommand{\sidetextcite}{o o o m}{%
-	\RenewDocumentCommand{\kaobiblio@marginnote}{m}{%
-		\marginnote[#1]{##1}%
-	}%
-	\DeclareCiteCommand{\kaobiblio@sidecite}[\kaobiblio@marginnote]{%
-	}{%
-		\formatmargincitation{\thefield{entrykey}}%
-	}{%
-		\\% separator between multiple citations
-	}{%
-	}%
+    \RenewDocumentCommand{\kaobiblio@marginnote}{m}{%
+        \marginnote[#1]{##1}%
+    }%
+    \DeclareCiteCommand{\kaobiblio@sidecite}[\kaobiblio@marginnote]{%
+    }{%
+        \formatmargincitation{\thefield{entrykey}}%
+    }{%
+        \\% separator between multiple citations
+    }{%
+    }%
     % With this we print the marker in the text and add the item to the bibliography at the end
-	\IfNoValueOrEmptyTF{#2}%
+    \IfNoValueOrEmptyTF{#2}%
         {\def\@tempa{\textcite{#4}\kaobiblio@sidecite{#4}}}%
-		{\IfNoValueOrEmptyTF{#3}%
-			{\IfNoValueTF{#3}%
+        {\IfNoValueOrEmptyTF{#3}%
+            {\IfNoValueTF{#3}%
                 {\def\@tempa{\textcite[#2]{#4}\kaobiblio@sidecite{#4}}}%
                 {\def\@tempa{\textcite[#2][]{#4}\kaobook@sidecite{#4}}}% postnote is empty, so pass empty postnote
-			}%
+            }%
             {\def\@tempa{\textcite[#2][#3]{#4}\kaobiblio@sidecite{#4}}}%
         }%
     \ifkaobiblio@addspace%
@@ -264,16 +264,16 @@
 % Fourth optional argument: postnote
 % Mandatory argument: citation key
 \NewDocumentCommand{\sideparencite}{s o o o m}{%
-	\RenewDocumentCommand{\kaobiblio@marginnote}{m}{%
-		\marginnote[#2]{##1}%
-	}%
-	\DeclareCiteCommand{\kaobiblio@sidecite}[\kaobiblio@marginnote]{%
-	}{%
-		\formatmargincitation{\thefield{entrykey}}%
-	}{%
-		\\% separator between multiple citations
-	}{%
-	}%
+    \RenewDocumentCommand{\kaobiblio@marginnote}{m}{%
+        \marginnote[#2]{##1}%
+    }%
+    \DeclareCiteCommand{\kaobiblio@sidecite}[\kaobiblio@marginnote]{%
+    }{%
+        \formatmargincitation{\thefield{entrykey}}%
+    }{%
+        \\% separator between multiple citations
+    }{%
+    }%
     % With this we print the marker in the text and add the item to the bibliography at the end
     \IfBooleanTF#1%
         {\IfNoValueOrEmptyTF{#3}%
@@ -305,7 +305,7 @@
 
 
 %----------------------------------------------------------------------------------------
-%	LINKING THE AUTHOR'S NAME
+%   LINKING THE AUTHOR'S NAME
 %----------------------------------------------------------------------------------------
 
 % In biblatex, when citing with the style authoryear or using \textcite, only the year is linked to the reference in the bibliography. Despite the arguments of one of the mantainers of the biblatex package (https://github.com/plk/biblatex/issues/428), some users think that in the author* style the author name should be a link as well. The `linkname' option provides an easy way to activate this behaviour.
@@ -397,7 +397,7 @@
 \fi
 
 %----------------------------------------------------------------------------------------
-%	CITATION ENVIRONMENTS
+%   CITATION ENVIRONMENTS
 %----------------------------------------------------------------------------------------
 
 % TODO: create a fancy environment for this. Perhaps printing also the 
@@ -405,17 +405,17 @@
 
 % Cite commands (assuming biblatex is loaded)
 \DeclareCiteCommand{\fullcite}{%
-	\defcounter{maxnames}{99}%
-	\usebibmacro{prenote}}
-	{\clearfield{url}%
-	\clearfield{pages}%
-	\clearfield{pagetotal}%
-	\clearfield{edition}%
-	\clearfield{issn}%
-	\clearfield{doi}%
-	\usedriver
-	{\DeclareNameAlias{sortname}{default}}
-	{\thefield{entrytype}}
+    \defcounter{maxnames}{99}%
+    \usebibmacro{prenote}}
+    {\clearfield{url}%
+    \clearfield{pages}%
+    \clearfield{pagetotal}%
+    \clearfield{edition}%
+    \clearfield{issn}%
+    \clearfield{doi}%
+    \usedriver
+    {\DeclareNameAlias{sortname}{default}}
+    {\thefield{entrytype}}
 }
 {\multicitedelim}
 {\usebibmacro{postnote}}
