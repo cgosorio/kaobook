@@ -898,7 +898,11 @@
             \oldsection[#2]{#3}%
         }%
         \IfNoValueTF{#4}{% optional label given, if not we do nothing
-            \mtocsection{#3}%
+            \IfNoValueTF{#2}{%
+                \mtocsection{#3}% when no optional toc title, use main title
+            }{% no TOC arg
+                \mtocsection{#2}% when toc optional title is given, use it
+            }%
         }{%
             \mtocsection{#4}%
         }%
