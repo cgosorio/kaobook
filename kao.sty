@@ -1029,7 +1029,9 @@
     \setmonofont[
         Scale=.89
     ]{Liberation Mono}
-    \setmathfont{Libertinus Math}
+    \setmathfont[%
+        bold-style=ISO % SEE: https://github.com/alerque/libertinus/issues/20
+    ]{Libertinus Math}
     \ifluatex
     \else
         \RequirePackage{morewrites} % Fix some errors related to floats
