@@ -1,0 +1,77 @@
+.
+├── CHANGELOG.rst
+├── CODE_OF_CONDUCT.md
+├── LICENSE
+├── MANIFEST.md
+├── README.md
+├── example_and_documentation.pdf
+├── examples
+│   ├── README.md
+│   ├── documentation
+│   │   ├── chapters
+│   │   │   ├── appendix.tex
+│   │   │   ├── figsntabs.tex
+│   │   │   ├── introduction.tex
+│   │   │   ├── layout.tex
+│   │   │   ├── mathematics.tex
+│   │   │   ├── options.tex
+│   │   │   ├── preface.tex
+│   │   │   ├── references.tex
+│   │   │   └── textnotes.tex
+│   │   ├── glossary.tex
+│   │   ├── images
+│   │   │   ├── monalisa.jpg
+│   │   │   └── seaside.jpeg
+│   │   ├── main.bib
+│   │   ├── main.pdf
+│   │   └── main.tex
+│   ├── machine_learning_project
+│   │   ├── img
+│   │   │   ├── bid_expr.png
+│   │   │   ├── bid_tba.png
+│   │   │   ├── cv.png
+│   │   │   ├── cv_example.png
+│   │   │   ├── expr_vs_tba.png
+│   │   │   ├── nested_cv.png
+│   │   │   ├── qq.png
+│   │   │   ├── regreg.png
+│   │   │   ├── response.png
+│   │   │   ├── rho2distr.png
+│   │   │   ├── tba_tf.png
+│   │   │   └── tigar_article.png
+│   │   ├── main.bib
+│   │   ├── main.pdf
+│   │   ├── main.tex
+│   │   └── sections
+│   │       ├── data.tex
+│   │       ├── discussion.tex
+│   │       ├── introduction.tex
+│   │       └── results.tex
+│   ├── minimal_book
+│   │   ├── main.pdf
+│   │   └── main.tex
+│   └── minimal_report
+│       ├── main.pdf
+│       └── main.tex
+├── instructions
+│   ├── README.md
+│   ├── latexmk
+│   │   └── latexmkrc
+│   ├── normal_usage
+│   │   └── README.md
+│   ├── sharelatex_server
+│   │   ├── 1_DockerShareLatexInstallationSHORT.pdf
+│   │   ├── 2_DockerSharelatexLONG.txt
+│   │   └── 3_DockerShareLatexInstallation.docx
+│   └── texlive_integration
+│       └── README.md
+├── kao.sty
+├── kaobiblio.sty
+├── kaobook.cls
+├── kaohandt.cls
+├── kaorefs.sty
+├── kaotheorems.sty
+├── ls.ori.txt
+└── tree.ori.txt
+
+14 directories, 60 files
