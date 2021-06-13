@@ -34,7 +34,7 @@ image. \Command{setchapterimage} automatically sets the chapter style to
 
 Let us make some examples. In this book, I begin a normal chapter with 
 the lines:
-\begin{lstlisting}
+\begin{lstlisting}[language=tex]
 \setchapterstyle{kao}
 \setchapterpreamble[u]{\margintoc}
 \chapter{Title of the Chapter}
@@ -53,7 +53,7 @@ this feature will be welcomed by the users, so keep in touch with me if
 you have preferences!} Whenever I want to start a chapter with an image, 
 I simply write:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=tex]
 \setchapterimage[7cm]{path/to/image.png} % Optionally specify the height
 \setchapterpreamble[u]{\margintoc}
 \chapter{Catchy Title} % No need to set a chapter style
@@ -112,13 +112,13 @@ to configure them.
 \caption{Commands to add a particular entry to the table of contents.}
 \labtab{tocentries}
 \begin{tabular}{ l l }
-	\toprule
-	Entry & Command to Activate \\
-	\midrule
-	Table of Contents & \lstinline|\setuptoc{toc}{totoc}| \\
-	List of Figs and Tabs & \lstinline|\PassOptionsToClass{toc=listof}{\@baseclass}| \\
-	Bibliography & \lstinline|\PassOptionsToClass{toc=bibliography}{\@baseclass}| \\
-	\bottomrule
+    \toprule
+    Entry & Command to Activate \\
+    \midrule
+    Table of Contents & \lstinline|\setuptoc{toc}{totoc}| \\
+    List of Figs and Tabs & \lstinline|\PassOptionsToClass{toc=listof}{\@baseclass}| \\
+    Bibliography & \lstinline|\PassOptionsToClass{toc=bibliography}{\@baseclass}| \\
+    \bottomrule
 \end{tabular}
 \end{table}
 
@@ -150,36 +150,36 @@ web page} and some additional sizes requested by the users, with the
 option names specified in \reftab{papersizes}.
 
 \begin{margintable}[*-6]
-	\caption{Some non-standard paper sizes supported by kaobook.}
-	\labtab{papersizes}
-	\begin{tabular}{ll}
-		\toprule
-		Dimension & Option name \\
-		\midrule
-		12.0cm x 19.0cm & smallpocketpaper \\
-		13.5cm x 21.5cm & pocketpaper \\
-		14.8cm x 21.0cm & a5paper \\
-		15.5cm x 22.0cm & juvenilepaper \\
-		17.0cm x 17.0cm & smallphotopaper \\
-		21.0cm x 15.0cm & appendixpaper \\
-		17.0cm x 22.0cm & cookpaper \\
-		19.0cm x 27.0cm & illustratedpaper \\
-		17.0cm x 17.0cm & photopaper \\
-		16.0cm x 24.0cm & f24paper \\
-		%21.0cm x 29.7cm & a4paper \\
-		\bottomrule
-	\end{tabular}
+    \caption{Some non-standard paper sizes supported by kaobook.}
+    \labtab{papersizes}
+    \begin{tabular}{ll}
+        \toprule
+        Dimension & Option name \\
+        \midrule
+        12.0cm x 19.0cm & smallpocketpaper \\
+        13.5cm x 21.5cm & pocketpaper \\
+        14.8cm x 21.0cm & a5paper \\
+        15.5cm x 22.0cm & juvenilepaper \\
+        17.0cm x 17.0cm & smallphotopaper \\
+        21.0cm x 15.0cm & appendixpaper \\
+        17.0cm x 22.0cm & cookpaper \\
+        19.0cm x 27.0cm & illustratedpaper \\
+        17.0cm x 17.0cm & photopaper \\
+        16.0cm x 24.0cm & f24paper \\
+        %21.0cm x 29.7cm & a4paper \\
+        \bottomrule
+    \end{tabular}
 \end{margintable}
 
 For instance, to use the \enquote{smallpocketpaper} add the correct 
 description at the beginning of the documentclass instruction:
-\begin{lstlisting}
+\begin{lstlisting}[language=tex]
 \documentclass[
-		smallpocketpaper,
-		fontsize=10pt,
-		twoside=false,
-		%open=any,
-		secnumdepth=1,
+        smallpocketpaper,
+        fontsize=10pt,
+        twoside=false,
+        %open=any,
+        secnumdepth=1,
 ]{kaobook}
 \end{lstlisting}
 
@@ -205,7 +205,7 @@ width of the page.}
 To change page layout, use the \Command{pagelayout} command. For 
 example, when I start a new part, I write:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=tex]
 \pagelayout{wide}
 \addpart{Title of the New Part}
 \pagelayout{margin}
@@ -217,16 +217,16 @@ command is called internally by the higher-level \Command{pagelayout},
 and it is responsible for setting the width of the margins and of the 
 text. The default definition is:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=tex]
 \newcommand{\marginlayout}{%
-	\newgeometry{
-		top=27.4mm,				% height of the top margin
-		bottom=27.4mm,			% height of the bottom margin
-		inner=24.8mm,			% width of the inner margin
-		textwidth=107mm,		% width of the text
-		marginparsep=8.2mm,		% width between text and margin
-		marginparwidth=49.4mm,	% width of the margin
-	}%
+    \newgeometry{
+        top=27.4mm,                % height of the top margin
+        bottom=27.4mm,            % height of the bottom margin
+        inner=24.8mm,            % width of the inner margin
+        textwidth=107mm,        % width of the text
+        marginparsep=8.2mm,        % width between text and margin
+        marginparwidth=49.4mm,    % width of the margin
+    }%
 }
 \end{lstlisting}
 
@@ -234,16 +234,16 @@ so if you want to, say, decrease the width of the margin while
 increasing the width of the text, you could write in the preamble of 
 your document something like:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=tex]
 \renewcommand{\marginlayout}{%
-	\newgeometry{
-		top=27.4mm,				% height of the top margin
-		bottom=27.4mm,			% height of the bottom margin
-		inner=24.8mm,			% width of the inner margin
-		textwidth=117mm,		% width of the text
-		marginparsep=8.2mm,		% width between text and margin
-		marginparwidth=39.4mm,	% width of the margin
-	}%
+    \newgeometry{
+        top=27.4mm,                % height of the top margin
+        bottom=27.4mm,            % height of the bottom margin
+        inner=24.8mm,            % width of the inner margin
+        textwidth=117mm,        % width of the text
+        marginparsep=8.2mm,        % width between text and margin
+        marginparwidth=39.4mm,    % width of the margin
+    }%
 }
 \end{lstlisting}
 
@@ -264,7 +264,7 @@ subsections).
 The sidenotes counter is the same across all the document, but if you 
 want it to reset at each chapter, just uncomment the line
 
-\begin{lstlisting}[style=kaolstplain]
+\begin{lstlisting}[language=tex,style=kaolstplain]
 \counterwithin*{sidenote}{chapter}
 \end{lstlisting}
 
@@ -273,7 +273,7 @@ in the \Package{styles/style.sty} package provided by this class.
 Figure and Table numbering is also per-chapter; to change that, use 
 something like:
 
-\begin{lstlisting}[style=kaolstplain]
+\begin{lstlisting}[language=tex,style=kaolstplain]
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
 \end{lstlisting}
 
@@ -298,23 +298,23 @@ citation\cite{James2013}citation
 
 \textbf{Space around figures and tables}
 
-\begin{lstlisting}[style=kaolstplain]
+\begin{lstlisting}[language=tex,style=kaolstplain]
 \renewcommand\FBaskip{.4\topskip}
 \renewcommand\FBbskip{\FBaskip}
 \end{lstlisting}
 
 \textbf{Space around captions}
 
-\begin{lstlisting}[style=kaolstplain]
+\begin{lstlisting}[language=tex,style=kaolstplain]
 \captionsetup{
-	aboveskip=6pt,
-	belowskip=6pt
+    aboveskip=6pt,
+    belowskip=6pt
 }
 \end{lstlisting}
 
 \textbf{Space around displays (\eg equations)}
 
-\begin{lstlisting}[style=kaolstplain]
+\begin{lstlisting}[language=tex,style=kaolstplain]
 \setlength\abovedisplayskip{6pt plus 2pt minus 4pt}
 \setlength\belowdisplayskip{6pt plus 2pt minus 4pt}
 \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@

@@ -21,7 +21,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
-%	CLASS CONFIGURATION
+%   CLASS CONFIGURATION
 %----------------------------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
@@ -64,11 +64,11 @@
 
 \setlength{\absleftindent}{0pt}% No indent
 \if@abstrt
-  \renewcommand{\abstitlestyle}[1]{%
-	\vspace{-0.6cm}%
-    \begin{center}%
-	  {\normalfont\bfseries\hspace{-3em} \abstractname\vspace{-.5em}\vspace{\z@}}%
-    \end{center}%
+ \renewcommand{\abstitlestyle}[1]{%
+  \vspace{-0.6cm}%
+   \begin{center}%
+     {\normalfont\bfseries\hspace{-3em} \abstractname\vspace{-.5em}\vspace{\z@}}%
+   \end{center}%
   }
 \else
   \renewcommand{\abstitlestyle}[1]{\vspace{-.5em}\vspace{\z@}}%
@@ -90,7 +90,7 @@
 \setkomafont{descriptionlabel}{\normalfont\bfseries}
 
 %----------------------------------------------------------------------------------------
-%	NUMBERING
+%   NUMBERING
 %----------------------------------------------------------------------------------------
 
 \setcounter{secnumdepth}{\kao@secnumdepth} % Set section numbering depth

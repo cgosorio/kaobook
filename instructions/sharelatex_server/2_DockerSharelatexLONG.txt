@@ -710,13 +710,13 @@ mongo         | 2020-01-26T19:44:57.109+0000 I  NETWORK  [listener] connection a
 mongo         | 2020-01-26T19:44:57.117+0000 I  NETWORK  [conn3] received client metadata from 172.18.0.4:42210 conn3: { driver: { name: "nodejs", version: "2.2.34" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "5.0.0-37-generic" }, platform: "Node.js v6.13.1, LE, mongodb-core: 2.1.18" }
 mongo         | 2020-01-26T19:44:57.131+0000 I  SHARDING [conn3] Marking collection sharelatex._migrations as collection version: <unsharded>
 sharelatex    | target migrations:
-sharelatex    | 	1_move_doc_lines_to_doc_collection
-sharelatex    | 	2_doc_lines_delete_from_project
-sharelatex    | 	3_pack_docHistory_collection
-sharelatex    | 	4_update_user_features
-sharelatex    | 	5_remove_holding_accounts
-sharelatex    | 	6_add_track_changes_feature
-sharelatex    | 	7_add_track_changes_feature_again
+sharelatex    |     1_move_doc_lines_to_doc_collection
+sharelatex    |     2_doc_lines_delete_from_project
+sharelatex    |     3_pack_docHistory_collection
+sharelatex    |     4_update_user_features
+sharelatex    |     5_remove_holding_accounts
+sharelatex    |     6_add_track_changes_feature
+sharelatex    |     7_add_track_changes_feature_again
 sharelatex    | mongodb://mongo/sharelatex
 mongo         | 2020-01-26T19:44:57.552+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:39414 #4 (2 connections now open)
 mongo         | 2020-01-26T19:44:57.553+0000 I  NETWORK  [conn4] received client metadata from 127.0.0.1:39414 conn4: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "4.2.2" }, os: { type: "Linux", name: "Ubuntu", architecture: "x86_64", version: "18.04" } }

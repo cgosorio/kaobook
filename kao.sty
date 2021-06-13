@@ -271,6 +271,8 @@
 \RequirePackage{ragged2e} % Required to achieve better ragged paragraphs
 \RequirePackage{setspace} % Required to easily set the space between lines
 \RequirePackage{hyphenat} % Hyphenation for special fonts
+% Using microtype with babel spanish gives «! Argument of \MT@res@a has an extra }» in pdflatex
+% Commeting it with babel spanish gives «TeX capacity exceeded, sorry [input stack size=5000]»
 \RequirePackage{microtype} % Improves character and word spacing
 \RequirePackage{needspace} % Required to prevent page break right after a sectioning command
 \RequirePackage{xspace} % Better print trailing whitespace

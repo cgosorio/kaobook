@@ -27,8 +27,8 @@ This work consists of all files listed below.
 kaobook/
 |-- kaobook.cls                 - book-specific definitions
 |-- kaohandt.cls                - handout-specific definitions
-|-- kao.sty	    				- main definitions
-|-- kaobiblio.sty	    		- style of the bibliography
+|-- kao.sty                     - main definitions
+|-- kaobiblio.sty               - style of the bibliography
 |-- kaotheorems.sty             - colorful styling of theorems
 `-- kaorefs.sty                 - commands for referencing
 ```
@@ -52,29 +52,29 @@ their compilation.
 kaobook/
 `-- examples/
     |-- minimal_book/
-    |	`-- main.tex
+    |    `-- main.tex
     |-- minimal_report/
-    |	`-- main.tex
-	|-- documentation/
-    |	|-- main.tex
-    |	|-- main.bib
-    |	|-- glossary.tex
-	|	`-- chapters/
-	|		|-- appendix.tex
-	|		|-- figsntabs.tex
-	|		|-- introduction.tex
-	|		|-- layout.tex
-	|		|-- mathematics.tex
-	|		|-- options.tex
-	|		|-- preface.tex
-	|		|-- references.tex
-	|		`-- textnotes.tex
+    |    `-- main.tex
+    |-- documentation/
+    |    |-- main.tex
+    |    |-- main.bib
+    |    |-- glossary.tex
+    |   `-- chapters/
+    |       |-- appendix.tex
+    |       |-- figsntabs.tex
+    |       |-- introduction.tex
+    |       |-- layout.tex
+    |       |-- mathematics.tex
+    |       |-- options.tex
+    |       |-- preface.tex
+    |       |-- references.tex
+    |       `-- textnotes.tex
     `-- machine_learning_project/
         |-- sections/
-        |	|-- introduction.tex
-        |	|-- data.tex
-        |	|-- results.tex
-        |	`-- discussion.tex
+        |    |-- introduction.tex
+        |    |-- data.tex
+        |    |-- results.tex
+        |    `-- discussion.tex
         |-- main.tex
         `-- main.bib
 ```

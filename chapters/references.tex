@@ -50,9 +50,9 @@ that command, you can choose which items will be printed in the margins.
 The best way to understand how it works is to see the actual definition 
 of this command.
 
-\begin{lstlisting}[style=kaolstplain,linewidth=1.5\textwidth]
+\begin{lstlisting}[language=tex,style=kaolstplain,linewidth=1.5\textwidth]
 \newcommand{\formatmargincitation}[1]{%
-	\parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}%
+    \parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}%
 }
 \end{lstlisting}
 
@@ -63,14 +63,14 @@ title.\sidecite{Battle2014} Now, suppose that you wish the margin
 citation to display the year and the author, followed by the title, and 
 finally a fixed arbitrary string; you would add to your document:
 
-\begin{lstlisting}[style=kaolstplain,linewidth=1.5\textwidth]
+\begin{lstlisting}[language=tex,style=kaolstplain,linewidth=1.5\textwidth]
 \renewcommand{\formatmargincitation}[1]{%
-	\citeyear{#1}, \citeauthor*{#1}: \citetitle{#1}; very interesting!%
+    \citeyear{#1}, \citeauthor*{#1}: \citetitle{#1}; very interesting!%
 }
 \end{lstlisting}
 
 \renewcommand{\formatmargincitation}[1]{%
-	\citeyear{#1}, \citeauthor*{#1}: \citetitle{#1}; very interesting!%
+    \citeyear{#1}, \citeauthor*{#1}: \citetitle{#1}; very interesting!%
 }
 
 The above code results in citations that look like the 
@@ -79,16 +79,16 @@ useful when you also change the default bibliography style. For
 instance, if you want to use the \enquote{philosophy-modern} style for 
 your bibliography, you might have something like this in the preamble:
 
-\begin{lstlisting}[style=kaolstplain,linewidth=1.5\textwidth]
+\begin{lstlisting}[language=tex,style=kaolstplain,linewidth=1.5\textwidth]
 \usepackage[style=philosophy-modern]{styles/kaobiblio}
 \renewcommand{\formatmargincitation}[1]{%
-	\sdcite{#1}%
+    \sdcite{#1}%
 }
 \addbibresource{main.bib}
 \end{lstlisting}
 
 \renewcommand{\formatmargincitation}[1]{%
-	\parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}%
+    \parencite{#1}: \citeauthor*{#1} (\citeyear{#1}), \citetitle{#1}%
 }
 
 The commands like \Command{citeyear}, \Command{parencite}
@@ -101,7 +101,7 @@ Finally, to compile a document containing citations, you need to use an
 external tool, which for this class is biber. You need to run the 
 following (assuming that your tex file is called main.tex):
 
-\begin{lstlisting}[style=kaolstplain]
+\begin{lstlisting}[language=bash,style=kaolstplain]
 $ pdflatex main
 $ biber main
 $ pdflatex main
@@ -126,7 +126,7 @@ the commands required are:\sidenote{These are the commands you would run
 in a UNIX system, but see also \nrefsec{compiling}; I have no idea about 
 how it works in Windows.}
 
-\begin{lstlisting}[style=kaolstplain]
+\begin{lstlisting}[language=bash,style=kaolstplain]
 $ pdflatex main
 $ makeglossaries main
 $ pdflatex main
@@ -139,12 +139,12 @@ compile your document, but only when you change the glossary entries.
 To create an index, you need to insert the command 
 \lstinline|\index{subject}| whenever you are talking about 
 \enquote{subject} in the text. For instance, at the start of this 
-paragraph I would write \lstinline|index{index}|, and an entry would be 
+paragraph I would write \lstinline|\index{index}|, and an entry would be 
 added to the Index in the backmatter. Check it out!
 
 \marginnote[2mm]{In theory, you would need to run an external command 
 for the index as well, but luckily the package we suggested, 
-	\Package{imakeidx}, can compile the index automatically.}
+    \Package{imakeidx}, can compile the index automatically.}
 
 \index{nomenclature}
 A nomenclature is just a special kind of index; you can find one at the end of
@@ -155,7 +155,7 @@ add the terms with the command \Command{nomenclature}. We put then a
 Also with this package we need to run an external command to compile the 
 document, otherwise the nomenclature will not appear:
 
-\begin{lstlisting}[style=kaolstplain]
+\begin{lstlisting}[language=bash,style=kaolstplain]
 $ pdflatex main
 $ makeindex main.nlo -s nomencl.ist -o main.nls
 $ pdflatex main
@@ -194,20 +194,20 @@ many typically labeled elements, including:
 \begin{multicols}{2}
 \setlength{\columnseprule}{0pt}
 \begin{itemize}
-	\item Page: \Command{labpage}
-	\item Part: \Command{labpart}
-	\item Chapter: \Command{labch}
-	\item Section: \Command{labsec}
-	\item Figure: \Command{labfig}
-	\item Table: \Command{labtab}
-	\item Definition: \Command{labdef}
-	\item Assumption: \Command{labassum}
-	\item Theorem: \Command{labthm}
-	\item Proposition: \Command{labprop}
-	\item Lemma: \Command{lablemma}
-	\item Remark: \Command{labremark}
-	\item Example: \Command{labexample}
-	\item Exercise: \Command{labexercise}
+    \item Page: \Command{labpage}
+    \item Part: \Command{labpart}
+    \item Chapter: \Command{labch}
+    \item Section: \Command{labsec}
+    \item Figure: \Command{labfig}
+    \item Table: \Command{labtab}
+    \item Definition: \Command{labdef}
+    \item Assumption: \Command{labassum}
+    \item Theorem: \Command{labthm}
+    \item Proposition: \Command{labprop}
+    \item Lemma: \Command{lablemma}
+    \item Remark: \Command{labremark}
+    \item Example: \Command{labexample}
+    \item Exercise: \Command{labexercise}
 \end{itemize}
 \end{multicols}
 
@@ -264,7 +264,7 @@ Probably the easiest way to compile a latex document is with the
 configured, from the bibliography to the glossary. The command to issue, 
 in general, is:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=bash]
 latexmk [latexmk_options] [filename ...]
 \end{lstlisting}
 

@@ -4,7 +4,7 @@
 \chapter{Figures and Tables}
 
 \footnotetext{The credits for the image above the chapter title go to:
-	Bushra Feroz, CC~BY-SA~4.0, \url{https://commons.wikimedia.org/w/index.php?curid=68724647}}
+    Bushra Feroz, CC~BY-SA~4.0, \url{https://commons.wikimedia.org/w/index.php?curid=68724647}}
 
 \section{Normal Figures and Tables}
 
@@ -24,9 +24,9 @@ you want to reference a figure, the label must come \emph{after} the
 caption!
 
 \begin{figure}[hb]
-	\includegraphics[width=0.45\textwidth]{monalisa}
-	\caption[Mona Lisa, again]{It's Mona Lisa again. \blindtext}
-	\labfig{normalmonalisa}
+    \includegraphics[width=0.45\textwidth]{monalisa}
+    \caption[Mona Lisa, again]{It's Mona Lisa again. \blindtext}
+    \labfig{normalmonalisa}
 \end{figure}
 
 While the format of the caption is managed by \Package{caption}, its 
@@ -39,17 +39,17 @@ following code:
 
 \begin{lstlisting}[caption={Caption of a listing.}]
 \begin{table}
-\begin{tabular}{ c c c c }
-	\toprule
-	col1 & col2 & col3 & col 4 \\
-	\midrule
-	\multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4\\ &
-	cell5 & cell6 & cell7 \\ &
-	cell8 & cell9 & cell10 \\
-	\multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4 \\ &
-	cell5 & cell6 & cell7 \\ &
-	cell8 & cell9 & cell10 \\
-	\bottomrule
+\begin{tabular}{cccc}
+    \toprule
+    col1 & col2 & col3 & col 4 \\
+    \midrule
+    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4\\ &
+    cell5 & cell6 & cell7 \\ &
+    cell8 & cell9 & cell10 \\
+    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4 \\ &
+    cell5 & cell6 & cell7 \\ &
+    cell8 & cell9 & cell10 \\
+    \bottomrule
 \end{tabular}
 \end{table}
 \end{lstlisting}
@@ -59,17 +59,17 @@ which results in the useless \vreftab{useless}.
 \begin{table}[ht]
 \caption[A useless table]{A useless table.}
 \labtab{useless}
-\begin{tabular}{ c c c c }
-	\toprule
-	col1 & col2 & col3 & col 4 \\
-	\midrule
-	\multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4\\ &
-	cell5 & cell6 & cell7 \\ &
-	cell8 & cell9 & cell10 \\
-	\multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4 \\ &
-	cell5 & cell6 & cell7 \\ &
-	cell8 & cell9 & cell10 \\
-	\bottomrule
+\begin{tabular}{cccc}
+    \toprule
+    col1 & col2 & col3 & col 4 \\
+    \midrule
+    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4\\ &
+    cell5 & cell6 & cell7 \\ &
+    cell8 & cell9 & cell10 \\
+    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4 \\ &
+    cell5 & cell6 & cell7 \\ &
+    cell8 & cell9 & cell10 \\
+    \bottomrule
 \end{tabular}
 \end{table}
 
@@ -85,9 +85,9 @@ obtained with something like this:
 
 \begin{lstlisting}[caption={Another caption.}]
 \begin{marginfigure}
-	\includegraphics{monalisa}
-	\caption[The Mona Lisa]{The Mona Lisa.}
-	\labfig{marginmonalisa}
+    \includegraphics{monalisa}
+    \caption[The Mona Lisa]{The Mona Lisa.}
+    \labfig{marginmonalisa}
 \end{marginfigure}
 \end{lstlisting}
 
@@ -104,12 +104,12 @@ the top.
 \caption[Another useless table]{Another useless table.}
 \labtab{anotheruseless}
 \raggedright
-\begin{tabular}{ c c c c }
-	\hline
-	col1 & col2 & col3 \\
-	\hline
-	\multirow{3}{4em}{Multiple row} & cell2 & cell3 \\ & cell5 & cell6 
-	\\ & cell8 & cell9 \\ \hline
+\begin{tabular}{cccc}
+    \hline
+    col1 & col2 & col3 \\
+    \hline
+    \multirow{3}{4em}{Multiple row} & cell2 & cell3 \\ & cell5 & cell6 
+    \\ & cell8 & cell9 \\ \hline
 \end{tabular}
 \end{margintable}
 
@@ -118,7 +118,7 @@ command, like so:
 
 \begin{lstlisting}
 \begin{marginfigure}[offset]
-	\includegraphics{seaside}
+    \includegraphics{seaside}
 \end{marginfigure}
 \end{lstlisting}
 
@@ -134,9 +134,9 @@ can insert figures which span the whole page width. For example, here
 are a wide figure and a wide table.
 
 \begin{figure*}[h!]
-	\includegraphics{seaside}
-	\caption[A wide seaside]{A wide seaside, and a wide caption.
-		Credits: By Bushra Feroz, CC BY-SA 4.0, \url{https://commons.wikimedia.org/w/index.php?curid=68724647}}
+    \includegraphics{seaside}
+    \caption[A wide seaside]{A wide seaside, and a wide caption.
+        Credits: By Bushra Feroz, CC BY-SA 4.0, \url{https://commons.wikimedia.org/w/index.php?curid=68724647}}
 \end{figure*}
 
 \begin{table*}[h!]
@@ -175,7 +175,7 @@ The \Package{floatrow} package provides the \enquote{H} specifier to
 instruct \LaTeX to position the figure (or table) in precisely the same 
 position it occupies in the source code. However, this specifier does 
 not work with wide figures or tables: you should use \enquote{h!} 
-instead, like so: \lstinline|\begin{figure*}[h!]|.
+instead, like so: \lstinline[language=tex]|\begin{figure*}[h!]|.
 
 You may have noticed the full width image at the very beginning of this
 chapter: that, however, is set up in an entirely different way, which
@@ -220,7 +220,7 @@ write two additional commands, one before and one after the
 \begin{lstlisting}[caption=Increasing the width of the caption of a \Environment{longtable}.]
 \floatsetup[longtable]{margins=centering,LTcapwidth=table} % Add this line before the longtable to increase the caption width
 \begin{longtable}{lp{8cm}p{5cm}p{2cm}}
-...
+\ldots
 \end{longtable}
 \floatsetup[longtable]{margins=raggedright,LTcapwidth=\textwidth} % Add this line after the longtable to revert the previous change
 \end{lstlisting}
