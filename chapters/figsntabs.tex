@@ -43,12 +43,12 @@ following code:
     \toprule
     col1 & col2 & col3 & col 4 \\
     \midrule
-    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4\\ &
-    cell5 & cell6 & cell7 \\ &
-    cell8 & cell9 & cell10 \\
-    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4 \\ &
-    cell5 & cell6 & cell7 \\ &
-    cell8 & cell9 & cell10 \\
+    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4 \\
+          & cell5 & cell6 & cell7 \\
+          & cell8 & cell9 & cell10 \\
+    \multirow{3}{4em}{Multiple row} & cell2 & cell3 & cell4 \\
+          & cell5 & cell6 & cell7 \\
+          & cell8 & cell9 & cell10 \\
     \bottomrule
 \end{tabular}
 \end{table}
@@ -172,7 +172,7 @@ obtained with the following code:
 \end{lstlisting}
 
 The \Package{floatrow} package provides the \enquote{H} specifier to 
-instruct \LaTeX to position the figure (or table) in precisely the same 
+instruct \LaTeX{} to position the figure (or table) in precisely the same 
 position it occupies in the source code. However, this specifier does 
 not work with wide figures or tables: you should use \enquote{h!} 
 instead, like so: \lstinline[language=tex]|\begin{figure*}[h!]|.
@@ -218,11 +218,13 @@ write two additional commands, one before and one after the
 \Environment{longtable}:
 
 \begin{lstlisting}[caption=Increasing the width of the caption of a \Environment{longtable}.]
-\floatsetup[longtable]{margins=centering,LTcapwidth=table} % Add this line before the longtable to increase the caption width
+% Add this line before the longtable to increase the caption width
+\floatsetup[longtable]{margins=centering,LTcapwidth=table}
 \begin{longtable}{lp{8cm}p{5cm}p{2cm}}
-\ldots
+    . . .
 \end{longtable}
-\floatsetup[longtable]{margins=raggedright,LTcapwidth=\textwidth} % Add this line after the longtable to revert the previous change
+% Add this line after the longtable to revert the previous change
+\floatsetup[longtable]{margins=raggedright,LTcapwidth=\textwidth}
 \end{lstlisting}
 
 Having seen figures and tables, it is now time to tackle 
