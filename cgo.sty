@@ -1,0 +1,134 @@
+\ProvidesPackage{cgo}
+\newif\ifcgo
+\ifxetexorluatex
+    %\newfontfamily\quotefont{Bookman Old Style}
+    %\newfontfamily\quotefont{Cooper Std}
+    % \newcommand{\quotefont}{\fontspec{Bookman Old Style}\fontsize{11}{13}\selectfont}
+    \newcommand{\quotefont}{\fontspec{Bookman Old Style}\fontsize{75}{80}\selectfont}
+\else
+    % Bookman
+    % \newcommand{\quotefont}{\fontfamily{pbk}\fontseries{m}\fontsize{11}{13}\selectfont}
+    \newcommand{\quotefont}{\fontfamily{pbk}\fontseries{m}\fontsize{75}{80}\selectfont}
+\fi
+\definecolor{ctcolorgraylight}{gray}{.85}
+\newcommand{\hugequote}{%
+    {%
+        % \quotefont\fontsize{75}{80}\selectfont%
+        \quotefont%
+    %    \hspace*{-.475em}
+        \hspace*{-.36em}%
+        \color{ctcolorgraylight}%
+        \textit{``}%
+        %\vskip -.26em%
+        \vskip -.46em%
+    }%
+}
+\newcommand{\epihugequote}{%
+    {%
+        % \quotefont\fontsize{75}{80}\selectfont%
+        \quotefont%
+        \hspace*{-.3em}\color{ctcolorgraylight}%
+        \textit{``}%
+        \vskip -.8em%
+    }%
+}
+\renewcommand{\hugequote}{%
+    \makebox[0pt][c]{%
+        \raisebox{3ex}{\includegraphics[width=30pt]{quotesBookman}}%
+    }%
+}
+
+\newcommand{\cleanchapterquote}[2]{%
+%    \begin{minipage}{.865\textwidth}%
+    \begin{minipage}{.92\textwidth}%
+        \begin{flushright}
+%            \begin{minipage}{.65\textwidth}%
+            \begin{minipage}{.8\textwidth}%
+                \begin{flushleft}
+                    {\hugequote}\textit{#1}
+                \end{flushleft}%
+                \vspace{-2em}
+                \begin{flushright}
+                    --- \textbf{#2} \\
+                    %#3
+                \end{flushright}
+            \end{minipage}%
+        \end{flushright}
+    \end{minipage}%
+    \bigskip
+}
+
+\newcommand{\marginquote}[3][-7mm]{%
+    \marginnote[#1]{
+        \begin{flushleft}
+            \hugequote\textit{\larger #2}
+        \end{flushleft}\vspace{-2.5em}
+        \begin{flushright}
+        \textbf{\larger --- #3}
+        \end{flushright}
+    }
+}
+
+% SEE: https://ctan.org/pkg/epigraph
+\usepackage{epigraph} % \epigraph, \begin{epigraphs}, \qitem
+\newcommand{\marginquotation}[3][0mm]{%
+    \marginnote[#1]{%
+        \epihugequote\epigraph{\textit{\larger #2}}%
+                              {\textbf{\larger #3}}}
+}
+\renewcommand{\marginquotation}[3][0mm]{%
+    \setlength{\epigraphrule}{0pt}
+    \marginpar[#1]{%
+        \epihugequote\epigraph{\textit{\larger #2}}%
+    {\vskip.8mm\textbf{\larger --- #3}}}
+}
+
+%-----------------------------------------------------------------------------
+
+\ifxetexorluatex
+\defaultfontfeatures{Ligatures=TeX}
+% Set serifed serif font to Adobe Garamond Pro
+\setmainfont{Adobe Garamond Pro} % <==  
+% % Set mono font to AmericanTypewriter
+\setmonofont[Scale=.85]{AmericanTypewriter}
+\fi
+
+\definecolor{MSBlue}{rgb}{.204,.353,.541}
+\definecolor{MSLightBlue}{rgb}{.31,.506,.741}
+\addtokomafont{section}{\color{MSBlue}\sffamily}
+\addtokomafont{subsection}{\color{MSLightBlue}\sffamily}
+\addtokomafont{subsubsection}{\color{MSLightBlue}\sffamily}
+
+% \addtokomafont{title}{\color{Maroon}\sffamily}
+% \addtokomafont{part}{\color{Maroon}\sffamily}
+% \addtokomafont{chapter}{\color{Maroon}\sffamily}
+
+% \addtokomafont{paragraph}{\color{Maroon}}
+\addtokomafont{captionlabel}{\color{Blue}}
+\addtokomafont{pagenumber}{\color{Red}}
+%-----------------------------------------------------------------------------
+
+% % SEE: https://tex.stackexchange.com/questions/10138/change-section-fonts
+% \ifxetexorluatex
+% \defaultfontfeatures{Ligatures=TeX}
+% % Set sans serif font to Calibri
+% \setsansfont{Calibri}
+% % Set serifed font to Cambria
+% \setmainfont{Cambria}
+% % Set math font to Cambria Math
+% \setmathfont[bold-style=ISO]{Cambria Math}
+% % Set mono font to AmericanTypewriter
+% \setmonofont[Scale=.89]{AmericanTypewriter}
+% \definecolor{MSBlue}{rgb}{.204,.353,.541}
+% \definecolor{MSLightBlue}{rgb}{.31,.506,.741}
+% % Don't use \fontspec directly to change the font
+% % \addtokomafont{section}{\color{MidnightBlue}}
+% \addtokomafont{section}{\color{MSBlue}}
+% % \addtokomafont{subsection}{\color{MediumBlue}}
+% \addtokomafont{subsection}{\color{MSLightBlue}}
+% % Define a new fontfamily for the subsubsection font
+% % \newfontfamily\subsubsectionfont[Color=LightBlue]{TeX Gyre Termes}
+% % \newfontfamily\subsubsectionfont[Color=Cerulean]{TeX Gyre Termes}
+% \newfontfamily\subsubsectionfont[Color=MSLightBlue]{Times New Roman}
+% \addtokomafont{subsubsection}{\normalfont\itshape\subsubsectionfont}
+% \fi

@@ -1,7 +1,6 @@
 %----------------------------------------------------------------------------------------
 %   EXAMPLE AND DOCUMENTATION OF THE KAOBOOK CLASS
 %----------------------------------------------------------------------------------------
-
 \documentclass[
 % showframe,
     a4paper, % Page size
@@ -15,6 +14,7 @@
 %----------------------------------------------------------------------------------------
 %   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
+% \usepackage{syntonly}\syntaxonly
 
 \newif\ifspanish
 \spanishtrue
@@ -29,6 +29,8 @@
     \fi
 \else
     \ifspanish
+        % Using this with microtype gives «! Argument of \MT@res@a has an extra }» in pdflatex
+        % Commeting mircotype gives «TeX capacity exceeded, sorry [input stack size=5000]»
         \usepackage[spanish]{babel} % Load characters and hyphenation
     \else
         \usepackage[english]{babel} % Load characters and hyphenation
@@ -69,7 +71,13 @@
 
 %----------------------------------------------------------------------------------------
 
+
+%🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻🔻
+\usepackage{cgo}
+%🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺
+
 \begin{document}
+
 
 %----------------------------------------------------------------------------------------
 %   BOOK INFORMATION

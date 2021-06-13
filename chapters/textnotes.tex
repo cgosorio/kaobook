@@ -64,8 +64,8 @@ syntax of \Command{sidenote} to resemble that of \Command{marginnote}.
 
 We load the packages \Package{marginnote}, \Package{marginfix} and 
 \Package{placeins}. Since \Package{sidenotes} uses \Package{marginnote}, 
-what we said for marginnotes is also valid for sidenotes. Side- and 
-margin- notes are shifted slightly upwards 
+what we said for marginnotes is also valid for sidenotes. The position of side- and 
+margin- notes can be shifted slightly upwards in needed
 (\Command{renewcommand\{\textbackslash marginnotevadjust\}\{3pt\}}) in 
 order to align them to the bottom of the line of text where the note is 
 issued. Importantly, both sidenotes and marginnotes are defined as 
@@ -103,8 +103,8 @@ this document I make use of a \KOMAScript\xspace feature and put it in
 the chapter preamble, with the following code:
 
 \marginnote{The font used in the margintoc is the same as the one for 
-	the chapter entries in the main table of contents at the beginning 
-	of the document.}
+    the chapter entries in the main table of contents at the beginning 
+    of the document.}
 
 \begin{lstlisting}[style=kaolstplain]
 \setchapterpreamble[u]{\margintoc}
@@ -117,7 +117,7 @@ Thus, there are in total three possible versions for the title of a
 section (or subsection): the one for the main text, the one for the main 
 table of contents, and the one for the margintoc. These versions can be 
 specified at the same time when the section is created in the source 
-\TeX file:
+\TeX{} file:
 \begin{lstlisting}[style=kaolstplain]
 \section[alternative-title-for-toc]{title-as-written-in-text}[alternative-title-for-margintoc]
 \end{lstlisting}
@@ -131,6 +131,13 @@ somewhere in your preamble.
 
 \section{Marginlisting}
 
+\begin{marginlisting}[0cm]
+    \caption{An example of a margin listing.}
+    \vspace{0.6cm}
+    \begin{lstlisting}[language=Python,style=kaolstplain]
+print("Hello World!")
+    \end{lstlisting}
+\end{marginlisting}
 On some occasions it may happen that you have a very short piece of code 
 that doesn't look good in the body of the text because it breaks the 
 flow of narration: for that occasions, you can use a 
@@ -138,21 +145,14 @@ flow of narration: for that occasions, you can use a
 limited, especially for the captions, but you can try the following 
 code:
 
-\begin{marginlisting}[-1.35cm]
-	\caption{An example of a margin listing.}
-	\vspace{0.6cm}
-	\begin{lstlisting}[language=Python,style=kaolstplain]
-print("Hello World!")
-	\end{lstlisting}
-\end{marginlisting}
 
 \begin{verbatim}
 \begin{marginlisting}[-0.5cm]
-	\caption{My caption}
-	\vspace{0.2cm}
-	\begin{lstlisting}[language=Python,style=kaolstplain]
-	... code ...
-	\end{lstlisting}
+    \caption{My caption}
+    \vspace{0.2cm}
+    \begin{lstlisting}[language=Python,style=kaolstplain]
+    ... code ...
+    \end{lstlisting}
 \end{marginlisting}
 \end{verbatim}
 
@@ -161,3 +161,31 @@ adjusted manually; if you find a better way, please let me know.
 
 Not only textual stuff can be displayed in the margin, but also figures. 
 Those will be the focus of the next chapter.
+
+
+\ifcsdef{cgotrue}{}{\newif\ifcgo\cgofalse}\ifcgo
+\section{Marginquotes}
+
+\marginquote[-7mm]{This is the text of the cite}{This is the author}
+
+These are two new commands: \verb|\marginquote| and \verb|\cleanchapterquote|,
+for formatting quotes that I, César Ignacio García Osorio, have introduced to
+be able to use in the first page of a chapter, although it can be used in other
+context. The first if for showing the quote at the margin:
+
+\begin{lstlisting}[language=tex,style=kaolstplain,showspaces=true]
+\marginquote[-7mm]{This is the text of the quote
+    that will appear on the margin}{This is the author}
+\end{lstlisting}
+
+The second for showing the quotes on the main body of the page.
+
+\begin{lstlisting}[language=tex,style=kaolstplain,showspaces=true]
+\cleanchapterquote{This is the text of the cite that I am
+    making a bit longer, since for cites in the main body
+    of the page looks better if the quote expands several
+    lines}{This is the author}
+\end{lstlisting}
+
+\cleanchapterquote{This is the text of the cite that I am making a bit longer, since for cites in the main body of the page looks better if the quote expands several lines}{This is the author}
+\fi % /ifcgo
