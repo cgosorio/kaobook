@@ -5,15 +5,15 @@
 
 \section{Headings}
 
-So far, in this document I used two different styles for the chapter 
-headings: one has the chapter name, a rule and, in the margin, the 
-chapter number; the other has an image at the top of the page, and the 
-chapter title is printed in a box (like for this chapter). There is one 
-additional style, which I used only in the \nrefch{appendix}; there, the chapter title is enclosed in two 
-horizontal rules, and the chapter number (or letter, in the case of the 
-appendix) is above it.\sidenote{To be honest, I do not think that mixing 
-heading styles like this is a wise choice, but in this document I did it 
-only to show you how they look.}
+So far, in this document I used two different styles for the chapter headings:
+one has the chapter name, a rule and, in the margin, the chapter number; the
+other has an image at the top of the page, and the chapter title is printed in
+a box (like for this chapter). There is one additional style, which I used only
+in the \nrefch{appendix}; there, the chapter title is enclosed in two
+horizontal rules, and the chapter number (or letter, in the case of the
+appendix) is above it.\sidenote[][*1]{To be honest, I do not think that mixing
+heading styles like this is a wise choice, but in this document I did it only
+to show you how they look.}
 
 Every book is unique, so it makes sense to have different styles from 
 which to choose. Actually, it would be awesome if whenever a 
@@ -220,12 +220,12 @@ text. The default definition is:
 \begin{lstlisting}[language=tex]
 \newcommand{\marginlayout}{%
     \newgeometry{
-        top=27.4mm,                % height of the top margin
-        bottom=27.4mm,            % height of the bottom margin
-        inner=24.8mm,            % width of the inner margin
+        top=27.4mm,             % height of the top margin
+        bottom=27.4mm,          % height of the bottom margin
+        inner=24.8mm,           % width of the inner margin
         textwidth=107mm,        % width of the text
-        marginparsep=8.2mm,        % width between text and margin
-        marginparwidth=49.4mm,    % width of the margin
+        marginparsep=8.2mm,     % width between text and margin
+        marginparwidth=49.4mm,  % width of the margin
     }%
 }
 \end{lstlisting}
@@ -237,12 +237,12 @@ your document something like:
 \begin{lstlisting}[language=tex]
 \renewcommand{\marginlayout}{%
     \newgeometry{
-        top=27.4mm,                % height of the top margin
-        bottom=27.4mm,            % height of the bottom margin
-        inner=24.8mm,            % width of the inner margin
+        top=27.4mm,             % height of the top margin
+        bottom=27.4mm,          % height of the bottom margin
+        inner=24.8mm,           % width of the inner margin
         textwidth=117mm,        % width of the text
-        marginparsep=8.2mm,        % width between text and margin
-        marginparwidth=39.4mm,    % width of the margin
+        marginparsep=8.2mm,     % width between text and margin
+        marginparwidth=39.4mm,  % width of the margin
     }%
 }
 \end{lstlisting}
