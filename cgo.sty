@@ -1,5 +1,10 @@
 \ProvidesPackage{cgo}
 \newif\ifcgo
+
+%-----------------------------------------------------------------------------
+% QUOTES
+%-----------------------------------------------------------------------------
+
 \ifxetexorluatex
     %\newfontfamily\quotefont{Bookman Old Style}
     %\newfontfamily\quotefont{Cooper Std}
@@ -84,11 +89,17 @@
 }
 
 %-----------------------------------------------------------------------------
+% FONTS
+%-----------------------------------------------------------------------------
 
 \ifxetexorluatex
 \defaultfontfeatures{Ligatures=TeX}
 % Set serifed serif font to Adobe Garamond Pro
-\setmainfont{Adobe Garamond Pro} % <==  
+\setmainfont[
+    SmallCapsFont={AGaramond RegularSC},
+]{Adobe Garamond Pro} % <==  
+% SEE: https://tex.stackexchange.com/questions/165998/small-caps-in-fontspec-on-xelatex
+
 % % Set mono font to AmericanTypewriter
 \setmonofont[Scale=.85]{AmericanTypewriter}
 \fi
@@ -106,6 +117,7 @@
 % \addtokomafont{paragraph}{\color{Maroon}}
 \addtokomafont{captionlabel}{\color{Blue}}
 \addtokomafont{pagenumber}{\color{Red}}
+
 %-----------------------------------------------------------------------------
 
 % % SEE: https://tex.stackexchange.com/questions/10138/change-section-fonts
